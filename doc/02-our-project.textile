@@ -1,0 +1,47 @@
+h1. Our Project
+
+{toc}
+
+h2. Einleitung
+
+Dieses Dokument beschreibt das Kapitel 2 vom "Grails Quick Start Guide"
+
+h2. Iteration Zero
+
+h3. Installing Grails
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-02$ ../bin/grails.sh help
+| Environment set to development.....
+.
+Usage (optionals marked with *):
+grails [environment]* [target] [arguments]*
+.
+Examples:
+grails dev run-app
+grails create-app books
+.
+Available Targets (type grails help 'target-name' for more info):
+grails add-proxy
+...
+grails uninstall-plugin
+grails upgrade
+grails war
+uli@uli-desktop:~/git/grails-qsg/chapter-02$ 
+
+h3. Grails Scripts
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-02$ ../bin/grais.sh help run-app
+
+h3. Setting Up our Workspace
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-02$ ../bin/grais.sh create-app TekDays
+| Created Grails Application at /home/uli/git/grails-qsg/chapter-02/TekDays
+uli@uli-desktop:~/git/grails-qsg/chapter-02$ cd TekDays/
+uli@uli-desktop:~/git/grails-qsg/chapter-02/TekDays$ ../../bin/grails.sh run-app
+| Compiling 38 source files
+| Server running. Browse to http://localhost:8080/TekDays
+
+!images/02-21-welcome-to-grails.png!
