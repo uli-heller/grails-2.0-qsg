@@ -90,5 +90,7 @@ EOF
 
 "${DD}/bin/ant.sh" -f "${DD}/bwtf.xml~" generate-html
 
-mkdir "${DD}/doc/html/images"
+if [ ! -d "${DD}/doc/html/images" ]; then
+  mkdir "${DD}/doc/html/images"
+fi
 cp -u "${DD}/doc/images/"*.png  "${DD}/doc/html/images/."
