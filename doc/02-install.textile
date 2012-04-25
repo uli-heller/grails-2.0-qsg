@@ -1,0 +1,66 @@
+h1. Installation von Grails
+
+{toc}
+
+h2. Einleitung
+
+In diesem Kapitel beschreiben wir die Installation von Grails-2.0.3 in Ubuntu-10.04.
+
+h2. Aktualisierung des Betriebssystems
+
+bc. 
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+h2. Installation von Java
+
+bc.
+sudo apt-get install default-jdk
+
+h2. Installation von Grails
+
+h3. Grails-Basispaket
+
+bc. 
+cd /opt
+sudo unzip .../grails-2.0.3.zip
+
+Danach gibt's u.a. folgende Verzeichnisse:
+
+* /opt/grails-2.0.3
+* /opt/grails-2.0.3/bin
+
+h3. Start-Skript
+
+Dateiname: $HOME/bin/grails
+
+Dateiinhalt:
+bc. 
+#!/bin/sh
+#
+GRAILS_HOME=/opt/grails-2.0.3
+JAVA_HOME=/usr/lib/jvm/default-java
+export JAVA_HOME
+#
+exec ${GRAILS_HOME}/bin/grails "$@"
+
+Zugriffsrechte: @chmod a+rx $HOME/bin/grails@
+
+h3. PATH
+
+Sicherstellen, dass das Start-Skript im PATH gefunden wird, bspw. durch Anhängen von nachfolgender Zeile an $HOME/.bashrc:
+
+bc. 
+PATH="${HOME}/bin:${PATH}"; export PATH
+
+h3. Abschlußtests
+
+bc. 
+uli@uli-desktop:~$ which grails
+/home/uli/bin/grails
+uli@uli-desktop:~$ grails --version
+.
+Grails version: 2.0.3
+uli@uli-desktop:~$ 
+
