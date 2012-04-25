@@ -18,6 +18,11 @@ h2. Installation von Java
 bc.
 sudo apt-get install default-jdk
 
+h2. Installation von Unzip
+
+bc.
+sudo apt-get install unzip
+
 h2. Installation von Grails
 
 h3. Grails-Basispaket
