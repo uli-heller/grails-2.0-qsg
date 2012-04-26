@@ -89,3 +89,13 @@ uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-ap
 | Completed 4 unit tests, 0 failed in 2591ms
 | Tests PASSED - view reports in target/test-reports
 
+h2. One-to-Many Relationships
+
+The domain class has this filename: grails-app/domain/tekdays/TekEvent.groovy.
+
+For the BootStrap.groovy class, you have to remember to add "tekdays." to all classnames.
+
+Finally, the TekEvent view looks like this:
+
+!images/04-43-tekevent-with-volunteers.png!
+

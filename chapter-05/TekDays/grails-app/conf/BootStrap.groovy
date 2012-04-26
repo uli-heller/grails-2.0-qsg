@@ -62,6 +62,24 @@ astro physics
                  println "An error occured with event2: ${error}"
              }
          }
+         def g1 = tekdays.TekEvent.findByName('Gateway Code Camp')
+         g1.addToVolunteers(
+             new tekdays.TekUser(fullName: 'Sarah Martin',
+                         userName: 'sarah',
+                         password: '54321',
+                         email:    'sarah@martinworld.com',
+                         website:  'www.martinworld.com',
+                         bio:      'Web designer and Grails afficianado.')
+         )
+         g1.addToVolunteers(
+             new tekdays.TekUser(fullName: 'Bill Smith',
+                         userName: 'Mr_Bill',
+                         password: '12345',
+                         email:    'mrbill@email.com',
+                         website:  'www.mrbillswebsite.com',
+                         bio:      'Software developer, claymation artist.')
+         )
+         g1.save()
     }
     def destroy = {
     }

@@ -8,6 +8,7 @@ class TekEvent {
     Date startDate
     Date endDate
     String description
+    static hasMany = [volunteers : TekUser]
 
     static constraints = {
       name()
