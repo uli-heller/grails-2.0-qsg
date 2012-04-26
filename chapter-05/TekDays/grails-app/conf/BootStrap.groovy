@@ -39,6 +39,29 @@ class BootStrap {
                  println "An error occured with event2: ${error}"
              }
          }
+         new tekdays.TekUser(fullName: 'John Doe',
+                     userName: 'jdoe', 
+                     password: 't0ps3cr3t', 
+                     email:    'jdoe@johnsgroovyshop.com', 
+                     website:  'blog.johnrgroovyshow.com', 
+                     bio:    '''John has been programming for over 40 years. He 
+has worked
+                                with every programming language known to man and
+ has settled
+                                on Groovy. In his spare time, John dabbles into 
+astro physics
+                                and plays shuffleboard.'''
+                    ).save() 
+         new tekdays.TekUser(fullName: 'John Deere',
+                     userName: 'tractorman', 
+                     password: 't0ps3cr3t', 
+                     email:    'john.deere@portproducers.org',
+                     website:  'www.perl.porkproducers.org', 
+                     bio:    '''John is a top notch Perl programmer and a pretty good
+                                hand around the farm. If he can't program it he can
+                                plow it!'''
+                    ).save()
+
     }
     def destroy = {
     }
