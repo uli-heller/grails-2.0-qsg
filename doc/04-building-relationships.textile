@@ -134,3 +134,35 @@ uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-
 The sponsor create view looks like this:
 
 !images/04-46-sponsor-create-view.png!
+
+h2. Many-to-Many Relationships
+
+Create the domain class:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsorship
+| Created file grails-app/domain/tekdays/Sponsorship.groovy
+| Created file test/unit/tekdays/SponsorshipTests.groovy
+
+... and the controller:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsorship
+| Created file grails-app/controllers/tekdays/SponsorshipController.groovy
+| Created file grails-app/views/sponsorship
+| Created file test/unit/tekdays/SponsorshipControllerTests.groovy
+
+The name of the domain class is: grails-app/domain/tekdays/Sponsorship.groovy.
+
+Now we have to edit these files:
+
+* grails-app/domain/tekdays/Sponsorship.groovy
+* grails-app/domain/tekdays/Sponsor.groovy
+* grails-app/domain/tekdays/TekEvent.groovy
+* grails-app/config/BootStrap.groovy
+
+Finally the event show view with sponsorships looks like this:
+
+!images/04-48-tekevent-with-sponsorships.png!
+
+h2. Finishing Up the Domain Model

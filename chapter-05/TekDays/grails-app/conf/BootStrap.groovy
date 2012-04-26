@@ -83,6 +83,28 @@ astro physics
          g1.addToRespondents('zachary@linuxgurus.org')
          g1.addToRespondents('solomon@bootstrapwelding.com')
          g1.save()
+         def s1 = new tekdays.Sponsor(name: 'Contegix',
+                              website: 'contegix.com',
+                              description: 'Beyond Managed Hosting for your Enterprise').save()
+         def s2 = new tekdays.Sponsor(name: 'Object Computing International',
+                              website: 'ociweb.com',
+                              description: 'An OO Software Engineering Company').save()
+         def sp1 = new tekdays.Sponsorship(event:g1,
+                                   sponsor:s1,
+                                   contributionType:'Other',
+                                   description:'Cool T-Shirts')
+         def sp2 = new tekdays.Sponsorship(event:g1,
+                                   sponsor:s2,
+                                   contributionType:'Venue',
+                                   description:'Will be paying for the Moscone')
+         s1.addToSponsorships(sp1)
+         s1.save()
+         s2.addToSponsorships(sp2)
+         s2.save()
+         g1.addToSponsorships(sp1)
+         g1.addToSponsorships(sp2)
+         g1.save()
+
     }
     def destroy = {
     }

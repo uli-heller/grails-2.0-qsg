@@ -10,6 +10,8 @@ class Sponsor {
         name
     }
 
+    static hasMany = [sponsorships: Sponsorship]
+
     static constraints = {
         name(blank:false)
         website(blank:false)
