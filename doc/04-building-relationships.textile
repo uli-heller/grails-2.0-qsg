@@ -45,145 +45,47 @@ The view looks like this:
 
 h2. One-to-One Relationships
 
+Please remember the name of the domain class. It is "TekDays/grails-app/domain/tekdays/TekEvent.groovy".
 
-h2. More About Domain Classes
+For "TekUser/grails-app/config/BootStrap.groovy", we have to remember to add the package name "tekdays" to all classnames.
 
-No remarks
+The TekEvent show view looks like this:
 
-h2. Testing Our Domain Class
+!images/04-42-tekevent-with-link.png!
 
-The unit test class has this filename: test/unit/tekdays/TekEventTests.groovy
+h3. Keeping Our Tests Updated
 
-Its content is pretty different from the book. It looks like this:
+The name of the test class is "TekDays/test/unit/tekdays/TekEventTests.groovy".
 
-<pre>
-package tekdays
-
-import grails.test.mixin.*
-import org.junit.*
-
-/**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
- */
-@TestFor(TekEvent)
-class TekEventTests {
-
-    void testSomething() {
-       fail "Implement me"
-    }
-}
-</pre>
-
-The test has to be modified like this:
-
-<pre>
-package tekdays
-
-import grails.test.mixin.*
-import org.junit.*
-
-/**
- * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
- */
-@TestFor(TekEvent)
-class TekEventTests {
-
-    void testToString() {
-       def tekEvent = new TekEvent(
-         name: 'Groovy One',
-         city: 'San Francisco, CA',
-         organizer: 'John Doe',
-         venue: 'Moscone Center',
-         startDate: new Date('6/2/2009'),
-         endDate: new Date('6/5/2009'),
-         description: 'This conference will cover all ...'
-       )
-       assertEquals 'Groovy One, San Francisco, CA', tekEvent.toString()
-    }
-}
-</pre>
-
-Running the unit tests goes like this:
+The line to change has to be modified to:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ ../../bin/grails.sh test-app -unit
-| Completed 1 unit test, 0 failed in 1056ms
+  organizer: [fullName: 'John Doe'] as tekdays.TekUser,
+
+Afterwards, the tests don't pass:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
+| Running 4 unit tests... 1 of 4
+| Failure:  testSomething(tekdays.TekUserTests)
+|  java.lang.AssertionError: Implement me
+	at org.junit.Assert.fail(Assert.java:93)
+	at tekdays.TekUserTests.testSomething(TekUserTests.groovy:15)
+...
+| Completed 4 unit tests, 3 failed in 2628ms
+| Packaging Grails application.....
+| Tests FAILED  - view reports in target/test-reports
+
+The tests fail because we use the generated unit test classes for
+
+* tekdays.TekEventControllerTests.groovy
+* tekdays.TekUserTests.groovy
+* tekdays.TekUserControllerTests.groovy
+
+and they have a call to @fail()@ included. This is an easy fix.
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
+| Completed 4 unit tests, 0 failed in 2591ms
 | Tests PASSED - view reports in target/test-reports
 
-h2. Taking Control of Our Domain
-
-Command to create the controller:
-
-bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ ../../bin/grails.sh create-controller TekEvent
-| Created file grails-app/controllers/tekdays/TekEventController.groovy
-| Created file grails-app/views/tekEvent
-| Created file test/unit/tekdays/TekEventControllerTests.groovy
-
-The controller and the unit test are created in different folders than mentioned in the book.
-
-<pre>
-package tekdays
-
-class TekEventController {
-    def scaffold = tekdays.TekEvent
-}
-</pre>
-
-The scaffolded list view looks like this:
-
-!images/03-32-scaffolded-list-view.png!
-
-The scaffolded create view looks like this:
-
-!images/03-33-scaffolded-create-view.png!
-
-h2. Modifying Code That Doesn't Exist
-
-The domain class has the filename: grails-app/domain/tekdays/TekEvent.groovy. It has to be modified like this:
-
-<pre>
-package tekdays
-
-class TekEvent {
-    String city
-    String name
-    String organizer
-    String venue
-    Date startDate
-    Date endDate
-    String description
-
-    static constraints = {
-	name()
-	city()
-	description(maxSize: 5000)
-	organizer()
-	venue()
-	startDate()
-	endDate()
-    }
-
-    String toString() {
-      "${name}, ${city}"
-    }
-}
-</pre>
-
-The new scaffolded list view with contraints looks like this:
-
-!images/03-34-list-view-with-constraints.png!
-
-Die Editier-Maske sieht so aus:
-
-!images/03-35-create-view-with-constraints.png!
-
-h2. Bootstrapping Some Test Data
-
-Beschreibung des Buches trifft weitgehend zu. In "BootStrap.groovy" muß lediglich statt @new TekEvent(...)@ die Klasse samt Package angegeben werden, also @new tekdays.TekEvent(...)@
-
-!images/03-36-list-view-with-sample-data.png!
-
-!images/03-37-tekevent-show-view.png!
-
-!images/03-38-tekevent-edit-view.png!

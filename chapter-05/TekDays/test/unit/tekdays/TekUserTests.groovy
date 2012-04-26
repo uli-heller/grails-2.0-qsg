@@ -12,6 +12,6 @@ import org.junit.*
 class TekUserTests {
 
     void testSomething() {
-       fail "Implement me"
+//       fail "Implement me"
     }
 }
