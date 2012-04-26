@@ -106,3 +106,31 @@ The domain class has this filename: grails-app/domain/tekdays/TekEvent.groovy.
 Finally, the TekEvent view looks like this:
 
 !images/04-44-tekevent-with-respondents.png!
+
+h2. Adding a Sponsor Class
+
+Create the domain class:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsor
+| Created file grails-app/domain/tekdays/Sponsor.groovy
+| Created file test/unit/tekdays/SponsorTests.groovy
+
+The domain class has this filename: grails-app/domain/tekdays/Sponsor.groovy. Watch out for the line
+
+bc. 
+package tekdays
+
+at the top of the class.
+
+Create the controller:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsor
+| Created file grails-app/controllers/tekdays/SponsorController.groovy
+| Created file grails-app/views/sponsor
+| Created file test/unit/tekdays/SponsorControllerTests.groovy
+
+The sponsor create view looks like this:
+
+!images/04-46-sponsor-create-view.png!
