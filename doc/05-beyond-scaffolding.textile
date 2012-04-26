@@ -39,3 +39,22 @@ h2. Grails Views with Groovy Server Pages
 !images/05-52-tekevent-show-view.png!
 
 !images/05-53-tekevent-create-view.png!
+
+Note: In order to get validation errors, you have to modify the domain class grails-app/domain/tekdays/TekEvent.groovy:
+
+<pre>
+   static constraints = {
+     name(blank: false)
+     city(blank: false)
+     ...
+   }
+</pre>
+
+!images/05-54-build-in-error-handling.png!
+
+!images/05-55-tekevent-edit-view.png!
+
+h3. Configuring a Database
+
+Since grails-2.x.y, the database H2 is used instead of HSQLDB. The database configuration file has different default values because of this.
+
