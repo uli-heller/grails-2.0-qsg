@@ -166,3 +166,19 @@ Finally the event show view with sponsorships looks like this:
 !images/04-48-tekevent-with-sponsorships.png!
 
 h2. Finishing Up the Domain Model
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Task
+| Created file grails-app/domain/tekdays/Task.groovy
+| Created file test/unit/tekdays/TaskTests.groovy
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Message
+| Created file grails-app/domain/tekdays/Message.groovy
+| Created file test/unit/tekdays/MessageTests.groovy
+
+Afterwards, we have to edit these files:
+
+* grails-app/domain/tekdays/Task.groovy
+* grails-app/domain/tekdays/Message.groovy
+* grails-app/domain/tekdays/TekEvent.groovy
