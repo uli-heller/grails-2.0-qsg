@@ -1,0 +1,41 @@
+h1. Beyond Scaffolding
+
+{toc}
+
+h2. Introduction
+
+This document referres to chapter 5 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.sh upgrade
+| Environment set to development..... 
+        WARNING: This target will upgrade an older Grails application to 2.0.3.
+        Are you sure you want to continue?
+                   [y,n] y
+| Plugin 'hibernate' with version '2.0.3' is already installed
+| Plugin 'tomcat' with version '2.0.3' is already installed
+| Project upgraded
+
+h2. Generating Scaffolding Code
+
+bc. 
+li@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ ../../bin/grails.sh generate-all "*"
+| Generating controller for domain class tekdays.TekEvent
+> File /grails-app/controllers/tekdays/TekEventController.groovy already exists. Overwrite?[y,n,a] a
+| Generating controller for domain class tekdays.TekUser
+> File /grails-app/controllers/tekdays/TekUserController.groovy already exists. Overwrite?[y,n,a] a
+| Generating controller for domain class tekdays.Sponsor
+> File /grails-app/controllers/tekdays/SponsorController.groovy already exists. Overwrite?[y,n,a] a
+| Finished generation for domain classes
+
+h2. Anatomy of a Grails Controller
+
+The TekEventController has this filename: grails-app/controllers/tekdays/TekEventController.groovy.
+
+h2. Grails Views with Groovy Server Pages
+
+!images/05-51-list-view.png!
+
+!images/05-52-tekevent-show-view.png!
+
+!images/05-53-tekevent-create-view.png!
