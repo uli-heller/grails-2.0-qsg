@@ -99,3 +99,10 @@ Finally, the TekEvent view looks like this:
 
 !images/04-43-tekevent-with-volunteers.png!
 
+h2. Collections of Simple Data Types
+
+The domain class has this filename: grails-app/domain/tekdays/TekEvent.groovy.
+
+Finally, the TekEvent view looks like this:
+
+!images/04-44-tekevent-with-respondents.png!
