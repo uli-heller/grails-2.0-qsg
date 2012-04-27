@@ -1,0 +1,43 @@
+h1. Getting Things Done
+
+{toc}
+
+h2. Introduction
+
+This document refers to chapter 6 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ echo "y"|../../bin/grails.sh upgrade
+| Environment set to development..... 
+        WARNING: This target will upgrade an older Grails application to 2.0.3.
+        Are you sure you want to continue?
+                   [y,n] y
+| Plugin 'hibernate' with version '2.0.3' is already installed
+| Plugin 'tomcat' with version '2.0.3' is already installed
+| Project upgraded
+
+h2. Changing All Our Views At Once
+
+The file "td_logo.png" has to be stored within the folder "web-app/images":
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ cp .../td_logo.png web-app/images/td_logo.png
+
+Within "grails-app/views/layout/main.gsp", this line has to be modified:
+
+bc.
+<div id="grailsLogo" role="banner">
+  <a href="http://grails.org">
+    <img src="${resource(dir: 'images', file: 'td_logo.png')}" alt="Grails"/>
+  </a>
+</div>
+
+I've splitted the line in parts for better readability. The new homepage looks like this:
+
+!images/06-61-tekdays-new-logo.png!
+
+Using the book's "main.css", the homepage changes to this:
+
+!images/06-61-tekdays-new-css.png!
+
+The message "Skip to content..." can be hidden by modifying "main.css" slightly.

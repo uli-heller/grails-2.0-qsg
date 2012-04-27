@@ -103,6 +103,13 @@ input:focus, select:focus, textarea:focus {
     padding: 5px 5px 5px 30px
 }
 
+/*
+ * 2012-04-27: Added by Uli - do not show "Skip to content..."
+ */
+.skip {
+    visibility: hidden;
+}
+
 div.errors {
     background: #fff3f3;
     border: 1px solid red;
