@@ -17,29 +17,12 @@
 			</ul>
 		</div>
 		<div id="show-tekEvent" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<!--<h1><g:message code="default.show.label" args="[entityName]" /></h1>-->
+                        <h1><g:fieldValue bean="${tekEventInstance}" field="name"/></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list tekEvent">
-			
-				<g:if test="${tekEventInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="tekEvent.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${tekEventInstance}" field="name"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${tekEventInstance?.city}">
-				<li class="fieldcontain">
-					<span id="city-label" class="property-label"><g:message code="tekEvent.city.label" default="City" /></span>
-					
-						<span class="property-value" aria-labelledby="city-label"><g:fieldValue bean="${tekEventInstance}" field="city"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${tekEventInstance?.description}">
 				<li class="fieldcontain">
@@ -50,20 +33,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${tekEventInstance?.organizer}">
+				<g:if test="${tekEventInstance?.city}">
 				<li class="fieldcontain">
-					<span id="organizer-label" class="property-label"><g:message code="tekEvent.organizer.label" default="Organizer" /></span>
-					
-						<span class="property-value" aria-labelledby="organizer-label"><g:link controller="tekUser" action="show" id="${tekEventInstance?.organizer?.id}">${tekEventInstance?.organizer?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${tekEventInstance?.venue}">
-				<li class="fieldcontain">
-					<span id="venue-label" class="property-label"><g:message code="tekEvent.venue.label" default="Venue" /></span>
-					
-						<span class="property-value" aria-labelledby="venue-label"><g:fieldValue bean="${tekEventInstance}" field="venue"/></span>
+					<span id="city-label" class="property-label">Location</span>
+					<span class="property-value" aria-labelledby="city-label">
+                                          <g:fieldValue bean="${tekEventInstance}" field="venue"/>,
+                                          <g:fieldValue bean="${tekEventInstance}" field="city"/>
+                                        </span>
 					
 				</li>
 				</g:if>
@@ -72,7 +48,7 @@
 				<li class="fieldcontain">
 					<span id="startDate-label" class="property-label"><g:message code="tekEvent.startDate.label" default="Start Date" /></span>
 					
-						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate date="${tekEventInstance?.startDate}" /></span>
+						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate format="MMMM dd,yyyy" date="${tekEventInstance?.startDate}" /></span>
 					
 				</li>
 				</g:if>
@@ -81,7 +57,16 @@
 				<li class="fieldcontain">
 					<span id="endDate-label" class="property-label"><g:message code="tekEvent.endDate.label" default="End Date" /></span>
 					
-						<span class="property-value" aria-labelledby="endDate-label"><g:formatDate date="${tekEventInstance?.endDate}" /></span>
+						<span class="property-value" aria-labelledby="endDate-label"><g:formatDate format="MMMM dd,yyyy" date="${tekEventInstance?.endDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${tekEventInstance?.organizer}">
+				<li class="fieldcontain">
+					<span id="organizer-label" class="property-label"><g:message code="tekEvent.organizer.label" default="Organizer" /></span>
+					
+						<span class="property-value" aria-labelledby="organizer-label"><g:link controller="tekUser" action="show" id="${tekEventInstance?.organizer?.id}">${tekEventInstance?.organizer?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -102,7 +87,7 @@
 					<span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsorships" /></span>
 					
 						<g:each in="${tekEventInstance.sponsorships}" var="s">
-						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.sponsor?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

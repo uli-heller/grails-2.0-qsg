@@ -71,3 +71,65 @@ bc.
 The modified TekEvent list view:
 
 !images/06-62-modified-tekevent-list-view.png!
+
+h3. The Show View
+
+grails-app/views/tekEvent/show.gsp - change the headline "h1":
+
+bc. 
+<h1>${tekEventInstance?.name}</h1>
+
+For the properties, the grails-2.x.y doesn't use @<tr>@ any more. Now, they are list items @<li>@ included within @<g:if>@. You'll have to remove everything from @<g:if>@ until @</g:if>@
+
+Location:
+
+bc. 
+<g:if test="${tekEventInstance?.city}">
+  <li class="fieldcontain">
+    <span id="city-label" class="property-label">Location:</span>
+    <span class="property-value" aria-labelledby="city-label">
+      <g:fieldValue bean="${tekEventInstance}" field="venue"/>,
+      <g:fieldValue bean="${tekEventInstance}" field="city"/>
+    </span>
+  </li>
+</g:if>
+
+Start date:
+
+bc. 
+<g:if test="${tekEventInstance?.startDate}">
+  <li class="fieldcontain">
+    <span id="startDate-label" class="property-label"><g:message code="tekEvent.startDate.label" default="Start Date" /></span>
+    <span class="property-value" aria-labelledby="startDate-label">
+      <g:formatDate format="MMMM dd,yyyy" date="${tekEventInstance?.startDate}" />
+    </span>
+  </li>
+</g:if>
+
+End date:
+
+bc. 			
+<g:if test="${tekEventInstance?.endDate}">
+  <li class="fieldcontain">
+    <span id="endDate-label" class="property-label"><g:message code="tekEvent.endDate.label" default="End Date" /></span>
+    <span class="property-value" aria-labelledby="endDate-label">
+      <g:formatDate format="MMMM dd,yyyy" date="${tekEventInstance?.endDate}" />
+    </span>
+  </li>
+</g:if>
+
+Sponsorship:
+
+bc. 
+<g:if test="${tekEventInstance?.sponsorships}">
+  <li class="fieldcontain">
+    <span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsorships" /></span>
+    <g:each in="${tekEventInstance.sponsorships}" var="s">
+      <span class="property-value" aria-labelledby="sponsorships-label">
+        <g:link controller="sponsorship" action="show" id="${s.id}">
+          ${s?.sponsor?.encodeAsHTML()}
+        </g:link>
+      </span>
+    </g:each>
+  </li>
+</g:if>
