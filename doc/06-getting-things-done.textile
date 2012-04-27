@@ -25,7 +25,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ cp .../td_logo.png web-app/
 
 Within "grails-app/views/layout/main.gsp", this line has to be modified:
 
-bc.
+bc. 
 <div id="grailsLogo" role="banner">
   <a href="http://grails.org">
     <img src="${resource(dir: 'images', file: 'td_logo.png')}" alt="Grails"/>
@@ -41,3 +41,33 @@ Using the book's "main.css", the homepage changes to this:
 !images/06-61-tekdays-new-css.png!
 
 The message "Skip to content..." can be hidden by modifying "main.css" slightly.
+
+h2. Modifying the Scaffolded Views
+
+h3. The List View
+
+grails-app/views/tekEvent/list.gsp - "id" isn't included, instead, there is a column for "startDate". After the modifications, it looks like this:
+
+bc. 
+<thead>
+  <tr>
+    <g:sortableColumn property="name" title="${message(code: 'tekEvent.name.label', default: 'Name')}" />
+    <g:sortableColumn property="city" title="${message(code: 'tekEvent.city.label', default: 'City')}" />
+    <g:sortableColumn property="description" title="${message(code: 'tekEvent.description.label', default: 'Description')}" />
+    <g:sortableColumn property="venue" title="${message(code: 'tekEvent.venue.label', default: 'Venue')}" />
+  </tr>
+</thead>
+
+Now the 2nd block:
+
+bc. 
+<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+  <td><g:link action="show" id="${tekEventInstance.id}">${fieldValue(bean: tekEventInstance, field: "name")}</g:link></td>
+  <td>${fieldValue(bean: tekEventInstance, field: "city")}</td>
+  <td>${fieldValue(bean: tekEventInstance, field: "description")}</td>
+  <td>${fieldValue(bean: tekEventInstance, field: "venue")}</td>
+</tr>
+
+The modified TekEvent list view:
+
+!images/06-62-modified-tekevent-list-view.png!
