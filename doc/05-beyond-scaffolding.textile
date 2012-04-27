@@ -4,7 +4,7 @@ h1. Beyond Scaffolding
 
 h2. Introduction
 
-This document referres to chapter 5 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
+This document refers to chapter 5 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
 
 bc. 
 uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.sh upgrade
@@ -19,7 +19,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.s
 h2. Generating Scaffolding Code
 
 bc. 
-li@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ ../../bin/grails.sh generate-all "*"
+uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ ../../bin/grails.sh generate-all "*"
 | Generating controller for domain class tekdays.TekEvent
 > File /grails-app/controllers/tekdays/TekEventController.groovy already exists. Overwrite?[y,n,a] a
 | Generating controller for domain class tekdays.TekUser
