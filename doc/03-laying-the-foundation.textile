@@ -4,7 +4,7 @@ h1. Laying the Foundation
 
 h2. Einleitung
 
-Dieses Dokument beschreibt das Kapitel 3 vom "Grails Quick Start Guide". Zunächst muß mit
+This document refers to chapter 3 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
 
 bc. 
 uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ echo "y"|../../bin/grails.sh upgrade
@@ -15,8 +15,6 @@ uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ echo "y"|../../bin/grails.s
 | Plugin 'hibernate' with version '2.0.3' is already installed
 | Plugin 'tomcat' with version '2.0.3' is already installed
 | Project upgraded
-
-das Projekt initialisiert werden.
 
 h2. Creating a Domain Class
 
@@ -156,13 +154,13 @@ The new scaffolded list view with contraints looks like this:
 
 !images/03-34-list-view-with-constraints.png!
 
-Die Editier-Maske sieht so aus:
+The edit view looks like this:
 
 !images/03-35-create-view-with-constraints.png!
 
 h2. Bootstrapping Some Test Data
 
-Beschreibung des Buches trifft weitgehend zu. In "BootStrap.groovy" muß lediglich statt @new TekEvent(...)@ die Klasse samt Package angegeben werden, also @new tekdays.TekEvent(...)@
+The description within the book is overall pretty accurare. But in  "BootStrap.groovy" you have to add the package name to @new TekEvent(...)@, so you have to enter @new tekdays.TekEvent(...)@ instead.
 
 !images/03-36-list-view-with-sample-data.png!
 
