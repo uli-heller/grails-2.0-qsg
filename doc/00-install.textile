@@ -1,29 +1,29 @@
-h1. Installation von Grails
+h1. Installation of Grails
 
 {toc}
 
-h2. Einleitung
+h2. Introduction
 
-In diesem Kapitel beschreiben wir die Installation von Grails-2.0.3 in Ubuntu-10.04.
+In this chapter, we describe the installation of Grails-2.0.3  on Ubuntu-12.04. This is optional for this project, since we've included the version to the repo.
 
-h2. Aktualisierung des Betriebssystems
+h2. Update The Operating System
 
 bc. 
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
 
-h2. Installation von Java
+h2. Install Java
 
 bc.
 sudo apt-get install default-jdk
 
-h2. Installation von Unzip
+h2. Install Unzip
 
 bc.
 sudo apt-get install unzip
 
-h2. Installation von Grails
+h2. Install Grails
 
 h3. Grails-Basispaket
 
@@ -31,16 +31,18 @@ bc.
 cd /opt
 sudo unzip .../grails-2.0.3.zip
 
-Danach gibt's u.a. folgende Verzeichnisse:
+Afterwards, these folders (... and many more) will exist:
 
 * /opt/grails-2.0.3
 * /opt/grails-2.0.3/bin
+* ...
 
-h3. Start-Skript
+h3. Start Script
 
-Dateiname: $HOME/bin/grails
+Filename: $HOME/bin/grails
 
-Dateiinhalt:
+Content:
+
 bc. 
 #!/bin/sh
 #
@@ -50,16 +52,17 @@ export JAVA_HOME
 #
 exec ${GRAILS_HOME}/bin/grails "$@"
 
-Zugriffsrechte: @chmod a+rx $HOME/bin/grails@
+Permissions: @chmod a+rx $HOME/bin/grails@
 
 h3. PATH
 
-Sicherstellen, dass das Start-Skript im PATH gefunden wird, bspw. durch Anhängen von nachfolgender Zeile an $HOME/.bashrc:
+In order to be able to execute Grails by typing @grails@ within the shell, you'll have to extent the environment variable PATH for example by appending these lines to $HOME/.bashrc:
 
 bc. 
-PATH="${HOME}/bin:${PATH}"; export PATH
+PATH="${HOME}/bin:${PATH}"
+export PATH
 
-h3. Abschlußtests
+h3. Final Tests
 
 bc. 
 uli@uli-desktop:~$ which grails
@@ -68,4 +71,3 @@ uli@uli-desktop:~$ grails --version
 .
 Grails version: 2.0.3
 uli@uli-desktop:~$ 
-

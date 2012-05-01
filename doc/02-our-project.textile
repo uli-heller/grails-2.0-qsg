@@ -2,13 +2,15 @@ h1. Our Project
 
 {toc}
 
-h2. Einleitung
+h2. Introduction
 
-Dieses Dokument beschreibt das Kapitel 2 vom "Grails Quick Start Guide"
+This document refers to chapter 2 of the "Grails Quick Start Guide".
 
 h2. Iteration Zero
 
 h3. Installing Grails
+
+You don't have to install Grails separately. Just change your working directory to .../grails-qsg/chapter-02 and execute grails by typing @../bin/grails.sh@ instead of @grails@.
 
 bc. 
 uli@uli-desktop:~/git/grails-qsg/chapter-02$ ../bin/grails.sh help
