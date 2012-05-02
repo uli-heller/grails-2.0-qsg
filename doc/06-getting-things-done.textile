@@ -133,3 +133,27 @@ bc.
     </g:each>
   </li>
 </g:if>
+
+!images/06-63-modified-tekevent-show-view.png!
+
+h3. The Create View
+
+For Grails-2.x.y, the create view consists of two parts:
+
+* create.gsp (similar to Grails-1.x.y)
+* _form.gsp (new view defining the form for create and edit)
+
+The "datePicker" is located in "_form.gsp". The precision is set to "day" by default, so no change is required.
+
+!images/06-64-modified-tekevent-create-view.png!
+
+h3. The Edit View
+
+For Grails-2.x.y, the edit view consists of two parts:
+
+* create.gsp (similar to Grails-1.x.y)
+* _form.gsp (new view defining the form for create and edit)
+
+We have to modify "_form.gsp" again. As before, we don't habe to set the precision, since it defaults to "day" anyway. We just have to fix the display of the sponsorships.
+
+!images/06-65-modified-tekevent-edit-view.png!
