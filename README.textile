@@ -1,0 +1,7 @@
+h1. Grails - A Quick Start Guide
+
+Within this project, we try to port the examples of the book "Grails - A Quick Start Guide" to Grails-2.0.3.
+
+For most of the chapters of the book, there is a folder named "chapter-${nn}". Underneath these folders, you find the grails application of the book ready to continue work with this very chapter, the status of the application matches the end of the previous chapter.
+
+Additionally, there is a document named "doc/${nn}-${chapterTitle}.textile" describing the differences for Grails-2.0.3.
