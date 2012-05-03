@@ -1,6 +1,9 @@
 h1. Grails - A Quick Start Guide
 
-Within this project, we try to port the examples of the book "Grails - A Quick Start Guide" to Grails-2.0.3.
+Within this project, we try to port the examples of the book "Grails - A Quick Start Guide" to Grails-2.0.3. The original book covers Grails-1.1. It is available via these sites:
+
+* http://www.amazon.com/Grails-Quick-Start-Guide-Dave-Klein/dp/1934356468
+* http://pragprog.com/book/dkgrails/grails
 
 For most of the chapters of the book, there is a folder named "chapter-${nn}". Underneath these folders, you find the grails application of the book ready to continue work with this very chapter, the status of the application matches the end of the previous chapter.
 
