@@ -6,6 +6,8 @@ class TekEventController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def taskService
+
     def index() {
         redirect(action: "list", params: params)
     }
@@ -26,7 +28,8 @@ class TekEventController {
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'tekEvent.label', default: 'TekEvent'), tekEventInstance.id])
+	flash.message = message(code: 'default.created.message', args: [message(code: 'tekEvent.label', default: 'TekEvent'), tekEventInstance.id])
+	taskService.addDefaultTasks(tekEventInstance)
         redirect(action: "show", id: tekEventInstance.id)
     }
 

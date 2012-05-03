@@ -157,3 +157,23 @@ For Grails-2.x.y, the edit view consists of two parts:
 We have to modify "_form.gsp" again. As before, we don't habe to set the precision, since it defaults to "day" anyway. We just have to fix the display of the sponsorships.
 
 !images/06-65-modified-tekevent-edit-view.png!
+
+h2. Event Task List
+
+No remarks.
+
+h2. Grails Services Classes
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ ../../bin/grails.sh create-service Task
+| Created file grails-app/services/tekdays/TaskService.groovy
+| Created file test/unit/tekdays/TaskServiceTests.groovy
+
+The name of the service class is "grails-app/services/tekdays/TaskService.groovy". The property "transactional" is missing for Grails-2.x.y.
+
+!images/06-66-tekevent-show-view-default-tasks.png!
+
+TBD:
+
+* Tasklist: Show names instead of IDs
+* Layout: Broken
