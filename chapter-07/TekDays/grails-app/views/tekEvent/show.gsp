@@ -98,7 +98,7 @@
 					<span id="tasks-label" class="property-label"><g:message code="tekEvent.tasks.label" default="Tasks" /></span>
 					
 						<g:each in="${tekEventInstance.tasks}" var="t">
-						<span class="property-value" aria-labelledby="tasks-label"><g:link controller="task" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tasks-label"><g:link controller="task" action="show" id="${t.id}">${t?.title?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

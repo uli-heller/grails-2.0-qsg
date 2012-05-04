@@ -175,5 +175,4 @@ The name of the service class is "grails-app/services/tekdays/TaskService.groovy
 
 TBD:
 
-* Tasklist: Show names instead of IDs
 * Layout: Broken
