@@ -173,6 +173,13 @@ The name of the service class is "grails-app/services/tekdays/TaskService.groovy
 
 !images/06-66-tekevent-show-view-default-tasks.png!
 
+Commands to move the test class of the service:
+
+bc. 
+uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ mkdir test/integration/tekdays
+uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ mv test/unit/tekdays/TaskServiceTests.groovy test/integration/tekdays/.
+
+
 TBD:
 
 * Layout: Broken
