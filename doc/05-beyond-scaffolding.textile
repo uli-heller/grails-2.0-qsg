@@ -7,7 +7,7 @@ h2. Introduction
 This document refers to chapter 5 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.sh upgrade
+.../grails-2.0-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.sh upgrade
 | Environment set to development..... 
         WARNING: This target will upgrade an older Grails application to 2.0.3.
         Are you sure you want to continue?
@@ -19,7 +19,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ echo "y"|../../bin/grails.s
 h2. Generating Scaffolding Code
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-05/TekDays$ ../../bin/grails.sh generate-all "*"
+.../grails-2.0-qsg/chapter-05/TekDays$ ../../bin/grails.sh generate-all "*"
 | Generating controller for domain class tekdays.TekEvent
 > File /grails-app/controllers/tekdays/TekEventController.groovy already exists. Overwrite?[y,n,a] a
 | Generating controller for domain class tekdays.TekUser

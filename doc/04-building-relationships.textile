@@ -7,7 +7,7 @@ h2. Introduction
 This document refers to chapter 4 of the "Grails Quick Start Guide". Yiu have to initialize the project with these commands:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ echo "y"|../../bin/grails.sh upgrade
+.../grails-2.0-qsg/chapter-04/TekDays$ echo "y"|../../bin/grails.sh upgrade
 | Environment set to development..... 
         WARNING: This target will upgrade an older Grails application to 2.0.3.
         Are you sure you want to continue?
@@ -19,7 +19,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ echo "y"|../../bin/grails.s
 h2. The TekUser Domain Class
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class TekUser
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class TekUser
 | Compiling 38 source files
 | Created file grails-app/domain/tekdays/TekUser.groovy
 | Created file test/unit/tekdays/TekUserTests.groovy
@@ -27,7 +27,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-
 The domain class gets this filename: grails-app/domain/tekdays/TekUser.groovy.
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller TekUser
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller TekUser
 | Created file grails-app/controllers/tekdays/TekUserController.groovy
 | Created file grails-app/views/tekUser
 | Created file test/unit/tekdays/TekUserControllerTests.groovy
@@ -65,7 +65,7 @@ bc.
 Afterwards, the tests don't pass:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
 | Running 4 unit tests... 1 of 4
 | Failure:  testSomething(tekdays.TekUserTests)
 |  java.lang.AssertionError: Implement me
@@ -85,7 +85,7 @@ The tests fail because we use the generated unit test classes for
 and they have a call to @fail()@ included. This is an easy fix.
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh test-app
 | Completed 4 unit tests, 0 failed in 2591ms
 | Tests PASSED - view reports in target/test-reports
 
@@ -112,7 +112,7 @@ h2. Adding a Sponsor Class
 Create the domain class:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsor
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsor
 | Created file grails-app/domain/tekdays/Sponsor.groovy
 | Created file test/unit/tekdays/SponsorTests.groovy
 
@@ -126,7 +126,7 @@ at the top of the class.
 Create the controller:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsor
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsor
 | Created file grails-app/controllers/tekdays/SponsorController.groovy
 | Created file grails-app/views/sponsor
 | Created file test/unit/tekdays/SponsorControllerTests.groovy
@@ -140,14 +140,14 @@ h2. Many-to-Many Relationships
 Create the domain class:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsorship
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Sponsorship
 | Created file grails-app/domain/tekdays/Sponsorship.groovy
 | Created file test/unit/tekdays/SponsorshipTests.groovy
 
 ... and the controller:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsorship
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-controller Sponsorship
 | Created file grails-app/controllers/tekdays/SponsorshipController.groovy
 | Created file grails-app/views/sponsorship
 | Created file test/unit/tekdays/SponsorshipControllerTests.groovy
@@ -168,12 +168,12 @@ Finally the event show view with sponsorships looks like this:
 h2. Finishing Up the Domain Model
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Task
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Task
 | Created file grails-app/domain/tekdays/Task.groovy
 | Created file test/unit/tekdays/TaskTests.groovy
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Message
+.../grails-2.0-qsg/chapter-04/TekDays$ ../../bin/grails.sh create-domain-class Message
 | Created file grails-app/domain/tekdays/Message.groovy
 | Created file test/unit/tekdays/MessageTests.groovy
 

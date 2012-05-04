@@ -7,7 +7,7 @@ h2. Einleitung
 This document refers to chapter 3 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ echo "y"|../../bin/grails.sh upgrade
+.../grails-2.0-qsg/chapter-03/TekDays$ echo "y"|../../bin/grails.sh upgrade
 | Environment set to development..... 
         WARNING: This target will upgrade an older Grails application to 2.0.3.
         Are you sure you want to continue?
@@ -19,7 +19,7 @@ uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ echo "y"|../../bin/grails.s
 h2. Creating a Domain Class
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ ../../bin/grails.sh create-domain-class TekEvent
+.../grails-2.0-qsg/chapter-03/TekDays$ ../../bin/grails.sh create-domain-class TekEvent
 | Compiling 38 source files
 | Created file grails-app/domain/tekdays/TekEvent.groovy
 | Created file test/unit/tekdays/TekEventTests.groovy
@@ -86,7 +86,7 @@ class TekEventTests {
 Running the unit tests goes like this:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ ../../bin/grails.sh test-app -unit
+.../grails-2.0-qsg/chapter-03/TekDays$ ../../bin/grails.sh test-app -unit
 | Completed 1 unit test, 0 failed in 1056ms
 | Tests PASSED - view reports in target/test-reports
 
@@ -95,7 +95,7 @@ h2. Taking Control of Our Domain
 Command to create the controller:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-03/TekDays$ ../../bin/grails.sh create-controller TekEvent
+.../grails-2.0-qsg/chapter-03/TekDays$ ../../bin/grails.sh create-controller TekEvent
 | Created file grails-app/controllers/tekdays/TekEventController.groovy
 | Created file grails-app/views/tekEvent
 | Created file test/unit/tekdays/TekEventControllerTests.groovy

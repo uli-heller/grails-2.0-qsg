@@ -7,7 +7,7 @@ h2. Introduction
 This document refers to chapter 6 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ echo "y"|../../bin/grails.sh upgrade
+.../grails-2.0-qsg/chapter-06/TekDays$ echo "y"|../../bin/grails.sh upgrade
 | Environment set to development..... 
         WARNING: This target will upgrade an older Grails application to 2.0.3.
         Are you sure you want to continue?
@@ -21,7 +21,7 @@ h2. Changing All Our Views At Once
 The file "td_logo.png" has to be stored within the folder "web-app/images":
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ cp .../td_logo.png web-app/images/td_logo.png
+.../grails-2.0-qsg/chapter-06/TekDays$ cp .../td_logo.png web-app/images/td_logo.png
 
 Within "grails-app/views/layout/main.gsp", this line has to be modified:
 
@@ -165,7 +165,7 @@ No remarks.
 h2. Grails Services Classes
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ ../../bin/grails.sh create-service Task
+.../grails-2.0-qsg/chapter-06/TekDays$ ../../bin/grails.sh create-service Task
 | Created file grails-app/services/tekdays/TaskService.groovy
 | Created file test/unit/tekdays/TaskServiceTests.groovy
 
@@ -176,8 +176,8 @@ The name of the service class is "grails-app/services/tekdays/TaskService.groovy
 Commands to move the test class of the service:
 
 bc. 
-uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ mkdir test/integration/tekdays
-uli@uli-desktop:~/git/grails-qsg/chapter-06/TekDays$ mv test/unit/tekdays/TaskServiceTests.groovy test/integration/tekdays/.
+.../grails-2.0-qsg/chapter-06/TekDays$ mkdir test/integration/tekdays
+.../grails-2.0-qsg/chapter-06/TekDays$ mv test/unit/tekdays/TaskServiceTests.groovy test/integration/tekdays/.
 
 
 TBD:
