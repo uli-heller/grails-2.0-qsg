@@ -10,3 +10,6 @@ for d in unpacked tmp jar doc/html; do
 done
 
 find "${DD}" -name "*~" -print0 | xargs -0 rm -f
+find "${DD}" -name "stacktrace.log" -print0 | xargs -0 rm -f
+
+rm -rf playground/Playground/.classpath  playground/Playground/.project  playground/Playground/.settings
