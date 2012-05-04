@@ -179,7 +179,20 @@ bc.
 .../grails-2.0-qsg/chapter-06/TekDays$ mkdir test/integration/tekdays
 .../grails-2.0-qsg/chapter-06/TekDays$ mv test/unit/tekdays/TaskServiceTests.groovy test/integration/tekdays/.
 
+h2. Integration Testing
+
+Name of the integration test: test/integration/tekdays/TaskServiceTests.groovy
+
+Running all the tests with @../../bin/grails.sh test-app@ produces lots of errors:
+
+* the scaffolded default tests of the domain classes fail for Grails-2.x.y.
+** test/unit/tekdays/MessageTests.groovy
+** test/unit/tekdays/SponsorTests.groovy
+** test/unit/tekdays/SponsorshipTests.groovy
+** test/unit/tekdays/TaskTests.groovy
+
 
 TBD:
 
 * Layout: Broken
+* Tests for Controllers do fail
