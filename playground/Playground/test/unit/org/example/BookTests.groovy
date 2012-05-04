@@ -1,7 +1,6 @@
 package org.example
 
 
-
 import grails.test.mixin.*
 import org.junit.*
 
