@@ -6,7 +6,13 @@ h2. Introduction
 
 Within this document, we describe the issues that showed up when working with Grails-2.0.3.
 
+h2. Next Issue Id
+
+* 002
+
 h2. Open Issues
+
+h2. Solved Issues
 
 h3. 001 - TekUserController's Unit Test Fails
 
@@ -34,4 +40,11 @@ In order to fix the issue, we tried these:
 * Added all the properties to test/unit/tekdays/TekUserControllerTests.groovy -> testUpdate still fails
 * Removed one of the properties wihtin testUpdate -> all tests OK
 
-h2. Solved Issues
+We have to do similar things for other controllers, too:
+
+* test/unit/tekdays/MessageControllerTests.groovy
+* test/unit/tekdays/SponsorControllerTests.groovy
+* test/unit/tekdays/SponsorshipControllerTests.groovy
+* test/unit/tekdays/TaskControllerTests.groovy
+* test/unit/tekdays/TekEventControllerTests.groovy
+* test/unit/tekdays/TekUserControllerTests.groovy
