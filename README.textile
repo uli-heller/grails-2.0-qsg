@@ -13,4 +13,12 @@ It covers Grails-1.1, which is pretty outdated.
 
 For most of the chapters of the book, there is a folder named "chapter-${nn}". Underneath these folders, you find the grails application of the book ready to continue work with this very chapter, the status of the application matches the end of the previous chapter.
 
-Additionally, there is a document named "doc/${nn}-${chapterTitle}.textile" describing the differences for Grails-2.0.3.
+Additionally, there is a document named "doc/${nn}-${chapterTitle}.textile" describing the differences for Grails-2.0.3. If you don't like browsing the textile doc within an editor of your choice, you can execute
+
+* @bin/textile-2-html.sh@
+
+Afterwards, a new folder named "doc/html" is available. You can then look at the description for chapter 6 by executing
+
+* @firefox doc/html/06-getting-things-done.html@
+
+At the moment, the description and start scripts are available for unix like systems only. I've tested them under Ubuntu-10.04. If there is demand, I'll probably be able to provide Windows versions, too.
