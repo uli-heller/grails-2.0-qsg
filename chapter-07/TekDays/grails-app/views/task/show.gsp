@@ -68,6 +68,12 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${taskInstance?.completed}">
+				<li class="fieldcontain">
+					<span id="completed-label" class="property-label"><g:message code="task.completed.label" default="Completed" /></span>
+					<span class="property-value" aria-labelledby="completed-label"><g:fieldValue bean="${taskInstance}" field="completed"/></span>
+				</li>
+				</g:if>
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

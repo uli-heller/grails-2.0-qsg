@@ -84,7 +84,7 @@
 			
 				<g:if test="${tekEventInstance?.sponsorships}">
 				<li class="fieldcontain">
-					<span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsorships" /></span>
+					<span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsored By" /></span>
 					
 						<g:each in="${tekEventInstance.sponsorships}" var="s">
 						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.sponsor?.encodeAsHTML()}</g:link></span>

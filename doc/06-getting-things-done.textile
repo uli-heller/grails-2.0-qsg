@@ -38,11 +38,12 @@ I've splitted the line in parts for better readability. The new homepage looks l
 
 !images/06-61-tekdays-new-logo.png!
 
-Using the book's "main.css", the homepage changes to this:
+Next, you copy the file "main.css" to "td_main.css" and append the book's style rules to the new file.
 
-!images/06-61-tekdays-new-css.png!
+Within "grails-app/views/layout/main.gsp", this line has to be modified:
 
-The message "Skip to content..." can be hidden by modifying "main.css" slightly.
+bc. 
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'td_main.css')}" type="text/css">
 
 h2. Modifying the Scaffolded Views
 
@@ -125,7 +126,7 @@ Sponsorship:
 bc. 
 <g:if test="${tekEventInstance?.sponsorships}">
   <li class="fieldcontain">
-    <span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsorships" /></span>
+    <span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsored By" /></span>
     <g:each in="${tekEventInstance.sponsorships}" var="s">
       <span class="property-value" aria-labelledby="sponsorships-label">
         <g:link controller="sponsorship" action="show" id="${s.id}">
@@ -235,6 +236,34 @@ class TaskServiceTests {
 Now run the integration tests with: @../../bin/grails.sh test-app integration:@
 Or run all tests with: @../../bin/grails.sh test-app@
 
-TBD:
+h2. Modifying the Task Class
 
-* Layout: Broken
+Name of the domain class: grails-app/domain/tekdays/Task.groovy
+
+The view "show.gsp" has to be modified like this:
+
+bc. 
+...
+  <g:if test="${taskInstance?.completed}">
+    <li class="fieldcontain">
+      <span id="completed-label" class="property-label"><g:message code="task.completed.label" default="Completed" /></span>
+      <span class="property-value" aria-labelledby="completed-label"><g:fieldValue bean="${taskInstance}" field="completed"/></span>
+    </li>
+  </g:if>
+</ol>
+
+Instead of "edit.gsp", we have to modify "_form.gsp":
+
+bc. 
+<div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'completed', 'error')} required">
+  <label for="completed">
+    <g:message code="task.completed.label" default="Completed" />
+    <span class="required-indicator">*</span>
+  </label>
+  <g:checkBox name="completed" value="${taskInstance?.completed}"/>
+</div>
+
+
+Finally, the task edit view looks like this:
+
+!images/06-67-task-edit-view.png!
