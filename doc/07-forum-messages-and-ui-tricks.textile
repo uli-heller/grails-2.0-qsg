@@ -1,0 +1,17 @@
+h1. Getting Things Done
+
+{toc}
+
+h2. Introduction
+
+This document refers to chapter 7 of the "Grails Quick Start Guide". You have to initialize the project with these commands:
+
+bc. 
+.../grails-2.0-qsg/chapter-06/TekDays$ echo "y"|../../bin/grails.sh upgrade
+| Environment set to development..... 
+        WARNING: This target will upgrade an older Grails application to 2.0.3.
+        Are you sure you want to continue?
+                   [y,n] y
+| Plugin 'hibernate' with version '2.0.3' is already installed
+| Plugin 'tomcat' with version '2.0.3' is already installed
+| Project upgraded
