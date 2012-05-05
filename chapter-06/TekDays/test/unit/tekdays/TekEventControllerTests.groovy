@@ -6,14 +6,28 @@ import org.junit.*
 import grails.test.mixin.*
 
 @TestFor(TekEventController)
-@Mock(TekEvent)
+@Mock([TekEvent,TekUser])
 class TekEventControllerTests {
 
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["name"] = 'name'
+      params["city"] = 'city'
+      params["description"] = 'city'
+      params["venue"] = 'venue'
+      params["startDate"] = new Date()
+      params["endDate"] = new Date()
+      def tekUser = new TekUser(
+		fullName: 'f',
+		userName: 'u',
+		password: 'p',
+		email: 'e',
+		website: 'w',
+		bio: 'b'
+	).save()
+      println "tekUser=${tekUser}"
+      params["organizer"] = tekUser;
     }
 
     void testIndex() {
@@ -105,7 +119,7 @@ class TekEventControllerTests {
 
         // test invalid parameters in update
         params.id = tekEvent.id
-        //TODO: add invalid values to params object
+        params.name = null
 
         controller.update()
 

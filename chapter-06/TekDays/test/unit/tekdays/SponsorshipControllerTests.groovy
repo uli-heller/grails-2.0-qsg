@@ -6,14 +6,17 @@ import org.junit.*
 import grails.test.mixin.*
 
 @TestFor(SponsorshipController)
-@Mock(Sponsorship)
+@Mock([Sponsorship, Sponsor, TekEvent])
 class SponsorshipControllerTests {
 
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["contributionType"] = 'Other'
+      def sponsor = new Sponsor()
+      params["sponsor"] = sponsor
+      def tekEvent = new TekEvent()
+      params["event"] = tekEvent
     }
 
     void testIndex() {
@@ -105,7 +108,7 @@ class SponsorshipControllerTests {
 
         // test invalid parameters in update
         params.id = sponsorship.id
-        //TODO: add invalid values to params object
+        params["contributionType"] = null
 
         controller.update()
 
