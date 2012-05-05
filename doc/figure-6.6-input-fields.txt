@@ -1,0 +1,13 @@
+Name: 
+
+  Saskatchewan Software Symposium
+
+City:
+
+  Saskatoon, Saskatchewan
+
+Description:
+
+  The saviest software professionals in Sascatchewan will settle into the Saskatoon Sheraton for some serious software development sessions.
+
+
