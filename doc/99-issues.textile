@@ -1,0 +1,37 @@
+h1. Issues
+
+{toc}
+
+h2. Introduction
+
+Within this document, we describe the issues that showed up when working with Grails-2.0.3.
+
+h2. Open Issues
+
+h3. 001 - TekUserController's Unit Test Fails
+
+h4. Error Messages
+
+<pre>
+grails> test-app
+| Running 54 unit tests... 5 of 54
+| Failure:  testSave(tekdays.TekUserControllerTests)
+|  Assertion failed: 
+
+assert response.redirectedUrl == '/tekUser/show/1'
+       |        |             |
+       |        null          false
+       org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@14fb35d
+
+	at tekdays.TekUserControllerTests.testSave(TekUserControllerTests.groovy:49)
+</pre>
+
+h4. Analysis
+
+In order to fix the issue, we tried these:
+
+* Copy the domain class to Playground, @generate-controller@, @test-app@ -> same error shows up
+* Added all the properties to test/unit/tekdays/TekUserControllerTests.groovy -> testUpdate still fails
+* Removed one of the properties wihtin testUpdate -> all tests OK
+
+h2. Solved Issues

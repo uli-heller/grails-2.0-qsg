@@ -12,8 +12,12 @@ class TekUserControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["fullName"] = "fullName"
+      params["userName"] = "userName"
+      params["email"] = "email"
+      params["website"] = "website"
+      params["bio"] = "bio"
+      params["password"] = "password"
     }
 
     void testIndex() {
@@ -105,7 +109,7 @@ class TekUserControllerTests {
 
         // test invalid parameters in update
         params.id = tekUser.id
-        //TODO: add invalid values to params object
+        params["password"] = null
 
         controller.update()
 
