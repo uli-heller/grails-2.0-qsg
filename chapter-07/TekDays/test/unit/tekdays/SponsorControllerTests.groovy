@@ -12,8 +12,8 @@ class SponsorControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["name"] = "name"
+      params["website"] = "website"
     }
 
     void testIndex() {
@@ -105,7 +105,7 @@ class SponsorControllerTests {
 
         // test invalid parameters in update
         params.id = sponsor.id
-        //TODO: add invalid values to params object
+        params["name"] = null
 
         controller.update()
 

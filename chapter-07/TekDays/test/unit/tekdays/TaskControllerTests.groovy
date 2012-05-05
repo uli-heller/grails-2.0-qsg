@@ -6,14 +6,15 @@ import org.junit.*
 import grails.test.mixin.*
 
 @TestFor(TaskController)
-@Mock(Task)
+@Mock([Task,TekEvent])
 class TaskControllerTests {
 
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["title"] = 'Title'
+      def tekEvent = new TekEvent();
+      params["event"] = tekEvent;
     }
 
     void testIndex() {
@@ -105,7 +106,7 @@ class TaskControllerTests {
 
         // test invalid parameters in update
         params.id = task.id
-        //TODO: add invalid values to params object
+        params.title = null
 
         controller.update()
 

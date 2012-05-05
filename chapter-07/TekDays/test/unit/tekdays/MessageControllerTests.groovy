@@ -6,15 +6,18 @@ import org.junit.*
 import grails.test.mixin.*
 
 @TestFor(MessageController)
-@Mock(Message)
+@Mock([Message, TekEvent, TekUser])
 class MessageControllerTests {
 
 
     def populateValidParams(params) {
       assert params != null
-      params["subject"] = "A test subject"
-      params["content"] = "Placeholder for content"
-      params["author"]  = "uli"
+      params["subject"] = 'A test subject'
+      params["content"] = 'Placeholder for content'
+      def tekEvent = new TekEvent()
+      params["event"] = tekEvent
+      def author = new TekUser()
+      params["author"] = author
     }
 
     void testIndex() {
@@ -106,7 +109,7 @@ class MessageControllerTests {
 
         // test invalid parameters in update
         params.id = message.id
-        //TODO: add invalid values to params object
+        params["subject"] = null
 
         controller.update()
 
