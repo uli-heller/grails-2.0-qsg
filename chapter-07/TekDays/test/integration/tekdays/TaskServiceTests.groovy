@@ -1,7 +1,5 @@
 package tekdays
 
-
-
 import grails.test.mixin.*
 import org.junit.*
 
@@ -11,9 +9,6 @@ import org.junit.*
 @TestFor(TaskService)
 class TaskServiceTests {
 
-    //void testSomething() {
-    //    fail "Implement me"
-    //}
     def taskService
 
     protected void setUp() {
@@ -38,7 +33,7 @@ class TaskServiceTests {
                              startDate: new Date(),
                              endDate: new Date() + 1)
         taskService.addDefaultTasks(e)
-        assertEquals e.tasks.size(), 6
+        assert e.tasks.size() == 6
     }
 
 }
