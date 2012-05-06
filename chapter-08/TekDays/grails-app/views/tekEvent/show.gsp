@@ -104,16 +104,14 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${tekEventInstance?.messages}">
 				<li class="fieldcontain">
 					<span id="messages-label" class="property-label"><g:message code="tekEvent.messages.label" default="Messages" /></span>
-					
-						<g:each in="${tekEventInstance.messages}" var="m">
-						<span class="property-value" aria-labelledby="messages-label"><g:link controller="message" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
+					<g:link controller="message" action="list" id="${tekEventInstance.id}">
+						<span class="property-value" aria-labelledby="messages-label">
+						  View Messages
+						</span>
+					</g:link>
 				</li>
-				</g:if>
 			
 				<g:if test="${tekEventInstance?.respondents}">
 				<li class="fieldcontain">
